@@ -1,11 +1,18 @@
 'use strict'
 
-import React from 'react'
+import React, { Component } from 'react'
+import LikebButton from './like-button'
+import SearchButton from './search-button'
 
-const App = React.createClass({
-  render: function () {
-    return <h1>Aplicação</h1>
+class App extends Component {
+  render () {
+    return (
+      <div className='container'>
+        <LikebButton />
+        <SearchButton />
+      </div>
+    )
   }
-})
+}
 
 export default App
