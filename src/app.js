@@ -1,15 +1,32 @@
 'use strict'
 
 import React, { Component } from 'react'
-import LikebButton from './like-button'
-import SearchButton from './search-button'
+import Timer from './timer'
 
 class App extends Component {
+  constructor () {
+    console.log('constructor')
+
+    super()
+    this.state = {
+      showTimer: true
+    }
+  }
+
+  componentWillMount () {
+    console.log('componentWillMount')
+  }
+
+  componentDidMount () {
+    console.log('componentDidMount')
+  }
+
   render () {
+    console.log('render')
     return (
-      <div className='container'>
-        <LikebButton />
-        <SearchButton />
+      <div>
+        {this.state.showTimer && <Timer />}
+        <button onClick={() => this.setState({ showTimer: !this.state.showTimer })}> Show / Hide</button>
       </div>
     )
   }
